@@ -5,7 +5,7 @@ __Si quieres probar el juego, puedes descargar su version compilada, solo debes 
 
 Este proyecto comenzó como una practica en el uso de clases en el contexto de la Programacion Orientada a Objetos. Bajo esta lógica, se programo 5 clases de personaje diferentes: Caballero, Mago, Berserker, Exorcista y Alquimista, los cuales se enfrentan en combates por turno de uno contra uno. Asi se desencadenó el desarrollo de "Code of Legends".
 
-![image](imagenes\screenshots\Captura1-1.png)
+![image](https://github.com/Rodr-7/Code-of-Legends/tree/main/imagenes/screenshots/Captura1-1.png)
 
 ## Tecnologías usadas
 La primera version funcional de Code of Legends está programada en Python puro, haciendo uso de las bibliotecas:
@@ -16,6 +16,7 @@ La primera version funcional de Code of Legends está programada en Python puro,
 ## Mecanicas de juego
 ### Personajes diferentes, ataques diferentes ⚔️​
 Elpersonaje que se use definira una forma de jugar totalmente diferente: método atacar, usado para infligir daño basico al contrincante en Code of Legends, funciona de formas totalmente diferentes en cada clase de personaje. Por ejemplo, mientras un personaje de la clase Caballero infringe daño con la suma de sus stats de Fuerza y Arma restándose a la Defensa de su contrincante, un Alquimista usará su Arma, su Fuerza y cierto porcentaje de su inteligencia, restándose ante el stat defensivo más bajo del contrincante (Defensa o Karma). De esta forma se pone en practica al maximo el polimorfismo, un concepto en la Programacion Orientada a Objetos, en la forma en que los personajes del juego luchan entre si.
+
 ![image](imagenes\screenshots\Captura2.png)
 Junto a lo anterior, cada tipo de personaje tiene sus stats nivelados de diferentes maneras acorde a su clase, generandose asi una disparidad tanto positiva como negativa que los jugadores deberan aprender y sortear para equilibrar el tablero.
 ### Habilidades de Clases 🧿​​⚡⚖️​💣​​
