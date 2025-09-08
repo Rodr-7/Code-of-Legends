@@ -1,0 +1,44 @@
+Suma stats iniciales(fuerza + inteligencia + karma + defensa):
+12
+(vida no sube con nivel)
+
+-----Caballero------
+Con acceso a habilidades de tipo fisico.
+Vida = 40
+fuerza inicial           4
+inteligencia inicial     2
+karma inicial            2
+defensa inicial          4
+
+-----Mago------
+Con acceso a habilidades de tipo magico.
+Vida = 30
+fuerza inicial           2
+inteligencia inicial     4
+karma inicial            4
+defensa inicial          2
+
+-----Berserker------
+Con acceso a habilidades de tipo fisico. Doble arma, menor defensa, mas vida que Caballero.
+Vida = 50
+fuerza inicial           5
+inteligencia inicial     2
+karma inicial            2
+defensa inicial          3
+
+-----Exorcista------
+Con acceso a habilidades de tipo mixto.
+Vida = 45
+fuerza inicial           3
+inteligencia inicial     3
+karma inicial            4
+defensa inicial          2
+
+-----Marginado------
+Con acceso a todas las habilidades. Stats iniciales randomizados
+Vida = 40
+fuerza inicial           1
+inteligencia inicial     1
+karma inicial            1
+defensa inicial          1
+

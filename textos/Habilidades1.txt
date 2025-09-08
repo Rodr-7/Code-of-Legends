@@ -1,0 +1,32 @@
+
+LO ANTERIOR YA NO VALE XD
+-------------------------------
+
+
+CABALLERO
+voluntad de acero
+ataq y def + 20%
+
+
+
+
+MAGO
+meditacion
+intel y karma + 20%
+
+
+
+
+BERSERKER
+frenesi  
+intel, def y karma - 20% ataq + 30%
+
+EXORCISTA
+justicia karmica
+usuario y enemigo --> karma +/- 20%  
+
+ALQUIMISTA
+transmutar 
+
+
+
