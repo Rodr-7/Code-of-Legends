@@ -17,10 +17,16 @@ root = tk.Tk()
 root.title("Code of Legends")
 root.geometry("630x560")
 
+# Configurar el grid para que los widgets se expandan
+for i in range(7):  # Ajusta según la cantidad de filas que uses
+    root.rowconfigure(i, weight=10)
+for j in range(5):  # Ajusta según la cantidad de columnas que uses
+    root.columnconfigure(j, weight=10)
+    
 #ttkbootstrap
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
-ttk.Style().theme_use('solar')  # tema oscuro
+ttk.Style().theme_use('cosmo')  # tema oscuro
 
 
 #------------------- MUSICA DE FONDO
@@ -61,7 +67,7 @@ def abrir_combate():
         boton_crear_per.grid_remove()
         label_personaje.grid_remove()
         label_creditos.grid_remove()
-        boton_volver.grid(row=5, column=3, pady=15, sticky="e")
+        boton_volver.grid(row=5, column=3, pady=15, sticky="nsew")
         musica_fondo(2)
 
     #combate.abrir_ventana_combate(root, recibir_personaje)
@@ -92,10 +98,21 @@ root.config(bg="lightblue")
 #imagen_fondo_tk = ImageTk.PhotoImage(imagen_fondo)
 
 # Crear un widget Label para la imagen de fondo
-from sprites import imagen_fondo_tk
-label_fondo = tk.Label(root, image=imagen_fondo_tk)
-label_fondo.place(x=0, y=0, relwidth=1, relheight=1)
-root.imagen_fondo_tk = imagen_fondo_tk
+from sprites import imagen_fondo, imagen_fondo_tk  # Asegurarse de tener imagen_fondo (PIL.Image) en sprites.py
+
+# Crear un Canvas para el fondo
+canvas_fondo = tk.Canvas(root, highlightthickness=0)
+canvas_fondo.grid(row=0, column=0, rowspan=10, columnspan=10, sticky="nsew")
+root.lower(canvas_fondo)  # Envía el canvas al fondo
+
+# Función para redimensionar la imagen de fondo
+def redimensionar_fondo(event):
+    nueva_img = imagen_fondo.resize((event.width, event.height), Image.LANCZOS)
+    root.imagen_fondo_tk = ImageTk.PhotoImage(nueva_img)
+    canvas_fondo.delete("all")
+    canvas_fondo.create_image(0, 0, anchor="nw", image=root.imagen_fondo_tk)
+
+root.bind("<Configure>", redimensionar_fondo)
 #----------------------------------------------------------------
 
 #-------------------- TITULO DEL JUEGO
@@ -112,29 +129,29 @@ root.imagen_titulo_tk = imagen_titulo_tk
 
 # Botón para abrir la ventana secundaria -------> 
 boton_abrir = tk.Button(root, text=f"\nComenzar partida\n", font=("Verdana", 16, "bold"), bg="#a4a4a4", command=abrir_combate)
-boton_abrir.grid(row=1, column=3, pady=15,sticky="sn")
+boton_abrir.grid(row=1, column=3, pady=15,sticky="nsew")
 #boton_abrir.pack(pady=20)
 
 # Botón para abrir la ventana secundaria -------> SELECCION DE PERSONAJE EXISTENTE
 boton_select_per = tk.Button(root, text=f"\nSeleccionar\nPersonaje\n", command=abrir_ventana_seleccion)
-boton_select_per.grid(row=3, column=1, pady=15)
+boton_select_per.grid(row=3, column=1, pady=15, sticky="nsew")
 #boton_select_per.pack(pady=20)
 
 # Botón para abrir la ventana secundaria -------> CREACION DE NUEVO PERSONAJE
 boton_crear_per = tk.Button(root, text="Nuevo Personaje", anchor="center", command=abrir_ventana_creacion)
-boton_crear_per.grid(row=4, column=1, pady=15)
+boton_crear_per.grid(row=4, column=1, pady=15, sticky="nsew")
 #boton_crear_per.pack(pady=20)
 
 
 # Etiqueta para mostrar los atributos del personaje creado y seleccionado
 label_personaje = tk.Label(root, text=f"Ningún personaje \nseleccionado para usar.", bg="red")
-label_personaje.grid(row=3, column=3, pady=15)
+label_personaje.grid(row=3, column=3, pady=15, sticky="nsew")
 #label_personaje.pack(pady=20)
 
 boton_volver = tk.Button(root, text="Volver a menu principal", command=volver_principal)
 
 label_creditos = tk.Label(root, text=f"Desarrollado por Rodr\n con amor ;)\nVersion 0.0.1", bg="#d1bea1")
-label_creditos.grid(row=6, column=4, sticky="w")
+label_creditos.grid(row=6, column=4, sticky="nsew")
 
 # Mantener referencias a las imágenes
 

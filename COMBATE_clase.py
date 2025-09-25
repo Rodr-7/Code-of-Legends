@@ -132,9 +132,13 @@ class Combate:
             label_personaje.config(image=imagen_exorcista_tk, compound='top')
         elif oficio_personaje == "Alquimista":
             from sprites import imagen_alquimista_tk
+            from sprites import animate_oficio_on_label
+            animate_oficio_on_label(oficio_personaje, label_personaje, fps=12)
             label_personaje.config(image=imagen_alquimista_tk, compound='top')
 
     def sprite_muerte(self, label_personaje):
+        from sprites import set_static_dead_on_label
+        set_static_dead_on_label(label_personaje)
         from sprites import imagen_muerte_tk
         label_personaje.config(image=imagen_muerte_tk, compound='top')
 
