@@ -17,6 +17,11 @@ root = tk.Tk()
 root.title("Code of Legends")
 root.geometry("630x560")
 
+#ttkbootstrap
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
+ttk.Style().theme_use('solar')  # tema oscuro
+
 
 #------------------- MUSICA DE FONDO
 musica_fondo(0)
